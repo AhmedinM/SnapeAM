@@ -84,6 +84,7 @@ $arr = potions();
                             if(isset($_SESSION["admin"]) && $_SESSION["admin"]==1){
                                 echo "&nbsp;&nbsp;&nbsp;<a class=\"btn btn-outline-primary\" href=\"potion.php?pot_id=".$arr[$i]["id"]."\"><i class=\"fa fa-edit\"></i> Uredi</a>&nbsp;&nbsp;&nbsp;<a class=\"btn btn-outline-danger\" href=\"delete_potion.php?pot_id=".$arr[$i]["id"]."\"><i class=\"fa fa-trash\"></i> Obriši</a>";
                             }
+                            echo "<div>".$arr[$i]["description"]."</div>";
                             echo "</a>";
                             echo "</li><br>";
                         }

@@ -86,15 +86,15 @@ $ing  = ingredients($rec["id"]);
                 <br>
                 <h3 class="ml-5"><span style="font-weight: normal;">Recept za: </span><?=$pot["name"]?></h3>
                 <br>
-                <div class="ml-5">
+                <div class="ml-5 mr-5">
                     <?=$rec["description"]?>
                 </div>
                 <br>
                 <div class="ml-5">
                     <?php
                         if($ing!==null){
-                            echo "Sastojci: <br><br>";
-                            for($i=0;$i<count($ing);$i++){
+                            echo "<b>Sastojci:</b> <br><br>";
+                            for($i=0;$i<count($ing[0]);$i++){
                                 echo "<input type=\"hidden\" name=\"ingredients[]\" value=\"".$ing[0][$i]["id"]."\"> ".$ing[0][$i]["name"].": ".$ing[1][$i]."g";
                                 echo "&nbsp;&nbsp;&nbsp;<a href=\"ingredient.php?ingr_id=".$ing[0][$i]["id"]."&&ret=".$id."\" class=\"btn btn-outline-secondary\">Uzmi iz magacina</a><br><br>";
                             }

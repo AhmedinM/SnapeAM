@@ -41,7 +41,7 @@ if(isset($_SESSION["oldNumber"])){
 }
 
 $insert = null;
-if(isset($_SESSION["insertI"])){
+if(isset($_SESSION["insertP"])){
     $insert = $_SESSION["insertP"];
 }
 

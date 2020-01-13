@@ -27,7 +27,7 @@ function recipe($id){
         exit;
     }
     
-    return $row;
+    return $rec;
 }
 
 function potion($id){
