@@ -28,7 +28,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     if($row===null){
         $_SESSION["emailError"] = "Unijeli ste nepostojeći email.";
-        //$_SESSION["old"] = $_POST["email"];
         header("Location: index.php");
         exit;
     }else if($res===false){
@@ -40,8 +39,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             header("Location: index.php");
             exit;
         }else{
-            //die("jednake");
-            //$_SESSION["logged"] = true;
             $_SESSION["name"] = $row["first_name"];
             $_SESSION["admin"] = $row["admin"];
             $_SESSION["permission"] = $row["permission"];

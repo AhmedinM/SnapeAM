@@ -42,12 +42,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $lastName = $_POST["lastName"];
     $email = $_POST["email"];
     $password = $_POST["password"];
-    //$confirm = $_POST["confirm"];
     $photo = $_FILES["photo"];
     move_uploaded_file($photo['tmp_name'],"./images/{$photo['name']}");
     $photoN = "./images/{$photo['name']}";
     $password = md5($password);
-    $sql = "INSERT INTO users(`id`, `first_name`, `last_name`, `email`, `password`, `permission`, `admin`, `photo`) VALUES(NULL,'$firstName','$lastName','$email','$password',0,0,'$photoN')";
+    $sql = "INSERT INTO users(`id`, `first_name`, `last_name`, `email`, `password`, " .
+    "`permission`, `admin`, `photo`) VALUES(NULL,'$firstName','$lastName', "."
+    '$email','$password',0,0,'$photoN')";
     $res = $dbConn->query($sql);
     if($res===false){
         die("Database error!");

@@ -48,18 +48,23 @@ $arr = ingredients();
                         <a class="dropdown-item text-success" href="ingredients.php">Sastojci</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Admin
-                        </a>
-                        <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item text-success" href="insert_potion.php">Unos napitaka</a>
-                        <a class="dropdown-item text-success" href="insert_ingredient.php">Unos sastojaka</a>
-                        <a class="dropdown-item text-success" href="insert_recipe.php">Unos recepata</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-success" href="users.php">Korisnici</a>
-                        </div>
-                    </li>
+                    <?php
+
+if(isset($_SESSION["admin"]) && $_SESSION["admin"]==1){
+    echo '<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin
+            </a>
+            <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item text-success" href="insert_potion.php">Unos napitaka</a>
+                <a class="dropdown-item text-success" href="insert_ingredient.php">Unos sastojaka</a>
+                <a class="dropdown-item text-success" href="insert_recipe.php">Unos recepata</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-success" href="users.php">Korisnici</a>
+            </div>
+        </li>';
+}
+?>
                     <li class="nav-item active">
                         <a class="nav-link text-white" href="logout.php">Odjavi se <i class="fa fa-user"></i></a>
                     </li>

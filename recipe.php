@@ -96,13 +96,22 @@ $ing  = ingredients($rec["id"]);
                             echo "<b>Sastojci:</b> <br><br>";
                             for($i=0;$i<count($ing[0]);$i++){
                                 echo "<input type=\"hidden\" name=\"ingredients[]\" value=\"".$ing[0][$i]["id"]."\"> ".$ing[0][$i]["name"].": ".$ing[1][$i]."g";
+                                if(isset($_SESSION["admin"]) && $_SESSION["admin"]==1){
                                 echo "&nbsp;&nbsp;&nbsp;<a href=\"ingredient.php?ingr_id=".$ing[0][$i]["id"]."&&ret=".$id."\" class=\"btn btn-outline-secondary\">Uzmi iz magacina</a><br><br>";
+                                }else{
+                                    echo "<br><br>";
+                                }
                             }
                         }
                     ?>
                 </div>
                 <hr>
-                <a <?="href=\"potion.php?pot_id=$id&&ret=1\""?>class="ml-5 btn btn-outline-warning">Spremi u magacin</a>
+                <?php
+                    if(isset($_SESSION["admin"]) && $_SESSION["admin"]==1){
+                        echo "<a href=\"potion.php?pot_id=$id&&ret=1\" class=\"ml-5 btn btn-outline-warning\">Spremi u magacin</a>";
+                    }
+                ?>
+                <!--<a <?="href=\"potion.php?pot_id=$id&&ret=1\""?>class="ml-5 btn btn-outline-warning">Spremi u magacin</a>-->
                 <br><br>
             </div>
 
