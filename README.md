@@ -87,4 +87,4 @@ Ako ste preuzeli aplikaciju i želite da je ispobrate, možete da se reigstrujet
 *Loznka:* snejp123
 
 
-***Srećno! I hvala Vam što koristite naš proizvod***
+***Srećno! I hvala Vam što koristite naš proizvod!***
